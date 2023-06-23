@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Landing Page</title>
+  <style>
+    /* Estilos CSS para a landing page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bem-vindo à nossa Landing Page</h1>
+    <p>Inscreva-se para receber atualizações por e-mail.</p>
+    <form id="emailForm">
+      <input type="email" id="emailInput" placeholder="Digite seu e-mail" required>
+      <button type="submit">Inscrever-se</button>
+    </form>
+    <p id="confirmationMessage"></p>
+  </div>
+
+  <script>
+    // Capturando o formulário e o campo de entrada de e-mail
+    const form = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+
+    // Função para lidar com o envio do formulário
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Impede o envio do formulário padrão
+
+      // Obter o valor do e-mail digitado pelo usuário
+      const email = emailInput.value;
+
+      // Simular o envio do e-mail para um servidor (usando um setTimeout como exemplo)
+      setTimeout(function() {
+        confirmationMessage.textContent = `Obrigado por se inscrever! Seu e-mail (${email}) foi adicionado à nossa lista.`;
+      }, 1000);
+
+      // Limpar o campo de entrada de e-mail
+      emailInput.value = '';
+    }
+
+    // Adicionar um ouvinte de evento para o envio do formulário
+    form.addEventListener('submit', handleFormSubmit);
+  </script>
+</body>
+</html>
